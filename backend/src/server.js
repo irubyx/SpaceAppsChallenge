@@ -2,16 +2,17 @@ const path = require("path")
 const express = require("express")
 const cors = require("cors")
 const axios = require('axios');
+const dotenv = require("dotenv").config()
 
 const DiscoveryV2 = require('ibm-watson/discovery/v2');
 const { IamAuthenticator } = require('ibm-watson/auth');
 
 const discovery = new DiscoveryV2({
-    version: /*process.env.DISCOVERY_VERSION*/,
+    version: process.env.DISCOVERY_VERSION,
     authenticator: new IamAuthenticator({
-        apikey: /*process.env.DISCOVERY_APIKEY*/,
+        apikey: process.env.DISCOVERY_APIKEY,
     }),
-    serviceUrl: /*process.env.DISCOVERY_SERVICE_URL*/
+    serviceUrl: process.env.DISCOVERY_SERVICE_URL
 });
 
 const app = express()
@@ -25,21 +26,34 @@ app.use(express.static(publicDirPath))
 app.use(cors())
 
 app.get("/search", async (req, res) => {
-    discovery.listDocuments({ projectId: /*process.env.DISCOVERY_PROJECT_ID*/, collectionId: /*process.env.DISCOVERY_COLLECTION_ID*/ }).then((resu, err) => {
+    discovery.listDocuments({ projectId: process.env.DISCOVERY_PROJECT_ID, collectionId: process.env.DISCOVERY_COLLECTION_ID }).then((resu, err) => {
         res.send(resu.result)
     })
 })
 
-app.get("/getDocument", async (req, res) => {
-    console.log(process.env.PORT)
-
+app.get("/getDocument", (req, res) => {
     discovery.getDocument({
-        projectId: /*process.env.DISCOVERY_PROJECT_ID*/,
-        collectionId: /*process.env.DISCOVERY_COLLECTION_ID*/,
-        documentId: 
+        projectId: process.env.DISCOVERY_PROJECT_ID,
+        collectionId: process.env.DISCOVERY_COLLECTION_ID,
+        documentId: req.query.docID
     }).then((resu, err) => {
         res.send(resu)
     })
+})
+
+app.get("/testeo", async (req, res) => {
+    const params = {
+        projectId: process.env.DISCOVERY_PROJECT_ID,
+        naturalLanguageQuery: "Lunar nomenclature"
+    };
+
+    discovery.query(params)
+        .then(response => {
+            res.send(response.result);
+        })
+        .catch(err => {
+            console.log('error:', err);
+        });
 })
 
 app.listen(port, () => {
