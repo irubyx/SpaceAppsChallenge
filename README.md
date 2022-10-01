@@ -1,7 +1,7 @@
 # Space Apps Challenge
 
     Team name: Los del espacio
-    Team members: Martina de Leon, Sebastián Fripp, Juan Ignacio Prina, Bruno Quadrelli.
+    Team members: Martina De Leon, Sebastián Fripp, Juan Ignacio Prina, Bruno Quadrelli.
     Challenge: Can AI Preserve Our Science Legacy?
 
 ## Content
