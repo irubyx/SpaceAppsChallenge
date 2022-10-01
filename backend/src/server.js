@@ -25,13 +25,13 @@ app.use(express.static(publicDirPath))
 
 app.use(cors())
 
-app.get("/search", async (req, res) => {
+app.get("/getDocs", async (req, res) => {
     discovery.listDocuments({ projectId: process.env.DISCOVERY_PROJECT_ID, collectionId: process.env.DISCOVERY_COLLECTION_ID }).then((resu, err) => {
         res.send(resu.result)
     })
 })
 
-app.get("/getDocument", (req, res) => {
+app.get("/getDoc", (req, res) => {
     discovery.getDocument({
         projectId: process.env.DISCOVERY_PROJECT_ID,
         collectionId: process.env.DISCOVERY_COLLECTION_ID,
@@ -41,19 +41,17 @@ app.get("/getDocument", (req, res) => {
     })
 })
 
-app.get("/testeo", async (req, res) => {
+app.get("/search", async (req, res) => {
     const params = {
         projectId: process.env.DISCOVERY_PROJECT_ID,
-        naturalLanguageQuery: "Lunar nomenclature"
+        naturalLanguageQuery: req.query.nlq
     };
 
-    discovery.query(params)
-        .then(response => {
-            res.send(response.result);
-        })
-        .catch(err => {
-            console.log('error:', err);
-        });
+    discovery.query(params).then(response => {
+        res.send(response.result);
+    }).catch(err => {
+        console.log('error:', err);
+    });
 })
 
 app.listen(port, () => {

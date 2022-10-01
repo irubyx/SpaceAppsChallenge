@@ -8,18 +8,18 @@
 
 - [Space Apps Challenge](#space-apps-challenge)
   - [Content](#content)
-  - [Meter un resumen](#meter-un-resumen)
+  - [Our solution](#our-solution)
   - [Architecture](#architecture)
 
-## Meter un resumen
+## Our solution
+For the solution we have deployed both, frontend and backend application, in IBM Code Engine. We also have loaded some documents into the IBM Watson Discovery service for making the search experience
 
 ## Architecture
-METERLE ONDA A LA PARTE DE LA ARQUI
-The architecture for the solution we have created is the following: 
+The architecture and the flow for the solution we have created is the following: 
 
 ![](imgs/Diagram.png)
 
 1. Upload to Watson Discovery all your documents.
-2. A user search's some documents.
+2. A user search's some documents in the frontend application.
 3. Request is sent to the backend application.
 4. Backend application request Watson Discovery all documents that matches the criteria sent by the user.
