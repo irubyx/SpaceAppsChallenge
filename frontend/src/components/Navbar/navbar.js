@@ -2,31 +2,33 @@ import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import "../styles.css"
 
 function BasicExample() {
   return (
     <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">NASA SpaceApps</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+    
+          <Navbar.Brand href="#home">
+            <img
+              src="https://res.cloudinary.com/dus99ir1n/image/upload/v1664634393/NASA_SpaceApps/NASA_logo_bheuqb.png"
+              className="nav-logo"
+              alt="NASA logo"
+            />
+          </Navbar.Brand>
+        <Container className='contenedor'>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <Form className="d-flex">
+            <Form className="prueba d-flex">
                 <Form.Control
                 type="search"
                 placeholder="Search"
-                className="me-2"
+                className="nav-search me-2"
                 aria-label="Search"
                 />
                 <Button variant="outline-success">Search</Button>
             </Form>
           </Nav>
-        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
