@@ -16,6 +16,7 @@ function BasicExample() {
               className="nav-logo"
               alt="NASA logo"
             />
+            <Navbar.Brand>NASA SpaceApps Challenge</Navbar.Brand>
           </Navbar.Brand>
         <Container className='contenedor'>
           <Nav className="me-auto">
