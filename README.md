@@ -1,7 +1,7 @@
 # Space Apps Challenge
 
     Team name: Los del espacio
-    Team members: Martina de Leon, Sebastián Fripp, Juan Ignacio Prina, Bruno Quadrelli.
+    Team members: Martina De Leon, Sebastián Fripp, Juan Ignacio Prina, Bruno Quadrelli.
     Challenge: Can AI Preserve Our Science Legacy?
 
 ## Content
@@ -17,7 +17,7 @@ For the solution we have deployed both, frontend and backend application, in IBM
 ## Architecture
 The architecture and the flow for the solution we have created is the following: 
 
-![](imgs/Diagram.png)
+![](imgs/Architecture.png)
 
 1. Upload to Watson Discovery all your documents.
 2. A user search's some documents in the frontend application.
