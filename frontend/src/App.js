@@ -1,19 +1,37 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import './App.css';
-import Home from './components/Home/home.js';
-import NotFound from './components/404/notFound'
+const path = require("path")
+const express = require("express")
+const hbs = require("hbs")
 
-function App() {
-  return (
-    <Router>
-        <Home />
-        <Routes>
-          <Route path="*" component={NotFound} />
-        </Routes>
-    </Router>
-    
-  );
-}
+const app = express()
 
-export default App;
+// Define paths for express config
+const publicDirPath = path.join(__dirname, "../public")
+const viewsPath = path.join(__dirname, "../templates/views")
+const partialsPath = path.join(__dirname, "../templates/partials")
+
+// Setup handlebars engine and views location
+app.set("view engine", "hbs")
+app.set("views", viewsPath)
+hbs.registerPartials(partialsPath)
+
+// Setup static directory
+app.use(express.static(publicDirPath))
+
+app.get("", (req, res) => {
+    res.render("index", {
+        title: "Can AI Preserve Our Science Legacy?",
+        name: "Los del espacio"
+    })
+})
+
+app.get("*", (req, res) => {
+    res.render("404", {
+        title: "404",
+        name: "Los del espacio",
+        errorMessage: "Page not found"
+    })
+})
+
+app.listen(3000, () => {
+    console.log("App is up on port 3000")
+})
