@@ -14,6 +14,7 @@ We have develop a web page where you can make searches through a chatbot impleme
   - [Summary](#summary)
   - [Content](#content)
   - [Our solution](#our-solution)
+  - [Next steps](#next-steps)
 
 ## Our solution
 
@@ -23,4 +24,11 @@ We have trained our AI with the Smart Document Understanding (SDU) tool that all
 
 ![](imgs/Architecture.png)
 
-You can test our solution if you [click here](https://nasa-challenge-app.oo3t70jm3ew.us-south.codeengine.appdomain.cloud).
+**You can test our solution if you [click here](https://nasa-challenge-app.oo3t70jm3ew.us-south.codeengine.appdomain.cloud).**
+
+## Next steps
+
+We hope in the not too distant future to have the integration of Speech to Text and Text to Speech, to have new alternatives when searching.
+At the same time, we would like to include the option to download the documents that were found based on the query, by doing this, documents would be accessible from the same platform.
+
+![](imgs/NextStepsArchitecture.png)
