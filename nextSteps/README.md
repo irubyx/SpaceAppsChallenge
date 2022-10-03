@@ -9,23 +9,10 @@
 - [Next steps](#next-steps)
   - [Content](#content)
   - [Future solution](#future-solution)
-  - [Architecture](#architecture)
 
 ## Future solution
-<!-- Esperamos en un futuro, no muy lejano, contar con la integración de Watson Assistant, Speech to Text y Text to Speech, para integrar nuevas formas de realizar las búsquedas, de forma innovadora  
-de manera que todos las personas sean capaces de realizar las mismas. -->
 
-## Architecture
-
-Once created, the architecture and flow for the future solution would look something like this:
+We hope in the not too distant future to have the integration of Speech to Text and Text to Speech, to have new alternatives when searching.
+At the same time, we would like to include the option to download the documents that were found based on the query, by doing this, documents would be accessible from the same platform.
 
 ![](../imgs/NextStepsArchitecture.png)
-
-<!-- 1. sasd
-2. 33
-3. sds
-4. sdsd
-5. asd
-6. asd
-7. asd
-8. asd -->
