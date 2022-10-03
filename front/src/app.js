@@ -33,5 +33,5 @@ app.get("*", (req, res) => {
 })
 
 app.listen(8080, () => {
-    console.log("App is up on port 3000")
+    console.log("App is up on port 8080")
 })
